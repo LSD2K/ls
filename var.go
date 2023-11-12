@@ -1,4 +1,4 @@
-package main
+/*package main
 
 import "fmt"
 
@@ -9,4 +9,4 @@ func main() {
 	b = 28
 	c = 1 + 4
 	fmt.Println(a, b, c, hello)
-}
+}*/
