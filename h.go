@@ -1,4 +1,4 @@
-package main
+/*package main
 
 func main() {
 
@@ -12,7 +12,7 @@ func main() {
 		
 	}
 
-	/*var a, b, c int = 5, 6, 11
+	var a, b, c int = 5, 6, 11
 
 	if a > b || a+b == c {
 		fmt.Println("a bolshe b\n")
