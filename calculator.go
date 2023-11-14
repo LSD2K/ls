@@ -1,50 +1,56 @@
-// begin
+// begin      Эта версия калькулятора пока что работает только с арбаскими цифрами.
 package main
 
 import "fmt"
 
 func main() {
-	fmt.Println("Привет, это калькулятор.\n Форма выглядит следующим образом: x + y ")
+	fmt.Println("Привет, это калькулятор.\n Форма выглядит следующим образом: x + y ") //Пример ввода для пользователя
 	var x, y int
-	var c string
-	fmt.Println("Vvedite chislo")
-	fmt.Scanln(&x, &c, &y)
-	fmt.Println(sum(x, y))
+	var c string           // Инициализация переменных
+	fmt.Scanln(&x, &c, &y) // Ввод пользователем данных и присвоение этих значений переменным
+	switch c {             //Проверка операций, проверка же числовых данных будет в отдельных функциях.
+	case "+":
+		sum(x, y)
+		break
+	case "-":
+		raz(x, y)
+		break
+	case "*":
+		umn(x, y)
+		break
+	case "/":
+		del(x, y)
+		break
+	default:
+		fmt.Println("Error") // Нет нужной операции, вывод ошибки
+	}
 
 }
-func sum(x, y int) int {
-	var sum int = 0
+func sum(x, y int) { // Если вместо числа пользователь напишет буквы значение останется дэфолтным и будет 0,не выполнив условия программа выведет ошибку,так же с отрицательными числами
 	if x <= 10 && x >= 1 && y <= 10 && y >= 1 {
-		sum = x + y
+		fmt.Println(x + y)
 	} else {
-		fmt.Println("Sorry")
+		fmt.Println("Error")
 	}
-	return sum
 }
-func umn(x, y int) int {
-	var umn int = 0
+func umn(x, y int) {
 	if x <= 10 && x >= 1 && y <= 10 && y >= 1 {
-		umn = x * y
+		fmt.Println(x * y)
 	} else {
-		fmt.Println("Sorry")
+		fmt.Println("Error")
 	}
-	return umn
 }
-func raz(x, y int) int {
-	var raz int = 0
+func raz(x, y int) {
 	if x <= 10 && x >= 1 && y <= 10 && y >= 1 {
-		raz = x - y
+		fmt.Println(x - y)
 	} else {
-		fmt.Println("Sorry")
+		fmt.Println("Error")
 	}
-	return raz
 }
-func del(x, y int) int {
-	var del int = 0
+func del(x, y int) {
 	if x <= 10 && x >= 1 && y <= 10 && y >= 1 {
-		del = x / y
+		fmt.Println(x / y)
 	} else {
-		fmt.Println("Sorry")
+		fmt.Println("Error")
 	}
-	return del
 }
